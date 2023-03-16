@@ -19,3 +19,4 @@ text.textContent = "Hey! here's your bookmarklet!";
 box.appendChild(text);
 // Append the box to the body
 document.body.appendChild(box);
+console.log("yoooo");
