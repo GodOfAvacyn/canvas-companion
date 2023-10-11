@@ -1,12 +1,16 @@
-res://scripts/divider.gd
-res://scripts/asdfasdf.gd
-res://scenes/control.tscn
-res://scripts/VBoxResizable.gd
-res://scripts/HBoxResizable.gd
-res://scenes/h_split_container.tscn
-res://scenes/fuckthis.gd
-res://scripts/WindowResizer.gd
-res://scripts/resizable.gd
-res://resources/label_stylebox.tres
 res://resources/new_theme.tres
+res://resources/label_stylebox.tres
+res://scripts/asdfasdf.gd
+res://scripts/divider.gd
+res://scripts/HBoxResizable.gd
+res://scripts/VBoxResizable.gd
+res://scripts/WindowResizer.gd
+res://control.tscn
+res://scenes/control.tscn
+res://scenes/h_split_container.tscn
 res://resources/menu_bar.tscn
+res://resources/top_bar_style.tres
+res://MenuButton.gd
+res://resources/left bar/LeftBarHover.tres
+res://resources/left bar/LeftBarPressed.tres
+res://resources/left bar/LeftBarNormal.tres

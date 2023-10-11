@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cud5rl30e7cgf"]
 
-[ext_resource type="Script" path="res://tools/globals.gd" id="1_23psw"]
+[ext_resource type="Script" path="res://tools/Globals.gd" id="1_23psw"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
