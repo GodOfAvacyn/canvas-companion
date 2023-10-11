@@ -1,0 +1,12 @@
+res://scripts/divider.gd
+res://scripts/asdfasdf.gd
+res://scenes/control.tscn
+res://scripts/VBoxResizable.gd
+res://scripts/HBoxResizable.gd
+res://scenes/h_split_container.tscn
+res://scenes/fuckthis.gd
+res://scripts/WindowResizer.gd
+res://scripts/resizable.gd
+res://resources/label_stylebox.tres
+res://resources/new_theme.tres
+res://resources/menu_bar.tscn

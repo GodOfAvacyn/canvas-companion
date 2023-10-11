@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://daexqnej3f1su"]
+
+[node name="MenuBar" type="MenuBar"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+item_count = 1
+item_0/text = "Text"
+item_0/id = 0

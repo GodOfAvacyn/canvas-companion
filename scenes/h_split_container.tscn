@@ -1,0 +1,126 @@
+[gd_scene load_steps=13 format=3 uid="uid://8i6xu6536a4n"]
+
+[ext_resource type="Script" path="res://scripts/WindowResizer.gd" id="1_7dxn0"]
+[ext_resource type="Script" path="res://tools/globals.gd" id="2_pd233"]
+[ext_resource type="Theme" uid="uid://bgfpwu8urwh32" path="res://resources/new_theme.tres" id="3_smydx"]
+[ext_resource type="Texture2D" uid="uid://bofii2xj5csuw" path="res://dragger.png" id="4_ch2pf"]
+[ext_resource type="StyleBox" uid="uid://bxjgg7rpr3wcl" path="res://resources/label_stylebox.tres" id="4_qtwik"]
+[ext_resource type="Texture2D" uid="uid://yixiy7ss1071" path="res://vertical_dragger.png" id="5_nw0a4"]
+[ext_resource type="FontFile" uid="uid://crrssjonsocuh" path="res://calibri-regular.ttf" id="6_4ssi2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ohamk"]
+bg_color = Color(0.211765, 0.239216, 0.290196, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vwdny"]
+bg_color = Color(0.164706, 0.188235, 0.231373, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.211765, 0.239216, 0.290196, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f2swf"]
+bg_color = Color(0.211765, 0.239216, 0.290196, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh5hl"]
+bg_color = Color(0.211765, 0.239216, 0.290196, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rvnj"]
+bg_color = Color(0.211765, 0.239216, 0.290196, 1)
+
+[node name="Control" type="Control"]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="WindowResizer" type="Node" parent="."]
+script = ExtResource("1_7dxn0")
+
+[node name="WindowResizer2" type="Node" parent="."]
+script = ExtResource("2_pd233")
+dark_color = Color(0.113725, 0.133333, 0.160784, 1)
+medium_color = Color(0.145098, 0.168627, 0.203922, 1)
+light_color = Color(0.211765, 0.239216, 0.290196, 1)
+unfocused_text_color = Color(0.588235, 0.6, 0.615686, 1)
+focused_text_color = Color(0.792157, 0.8, 0.811765, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1600.0
+offset_bottom = 900.0
+theme_override_constants/separation = 4
+
+[node name="Panel" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ohamk")
+
+[node name="TabContainer" type="TabContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_smydx")
+theme_override_constants/side_margin = 0
+theme_override_font_sizes/font_size = 13
+
+[node name="HSplitContainer" type="HSplitContainer" parent="HBoxContainer/TabContainer"]
+layout_mode = 2
+theme = ExtResource("3_smydx")
+theme_override_constants/separation = 4
+theme_override_constants/minimum_grab_thickness = 0
+theme_override_constants/autohide = 1
+theme_override_icons/grabber = ExtResource("4_ch2pf")
+
+[node name="VSplitContainer" type="VSplitContainer" parent="HBoxContainer/TabContainer/HSplitContainer"]
+custom_minimum_size = Vector2(225, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_constants/minimum_grab_thickness = 0
+theme_override_icons/grabber = ExtResource("5_nw0a4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/TabContainer/HSplitContainer/VSplitContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="HBoxContainer/TabContainer/HSplitContainer/VSplitContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_4ssi2")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = ExtResource("4_qtwik")
+text = "Modules"
+horizontal_alignment = 1
+
+[node name="Panel2" type="Panel" parent="HBoxContainer/TabContainer/HSplitContainer/VSplitContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vwdny")
+
+[node name="Panel2" type="Panel" parent="HBoxContainer/TabContainer/HSplitContainer/VSplitContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_f2swf")
+
+[node name="HSplitContainer" type="HSplitContainer" parent="HBoxContainer/TabContainer/HSplitContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(1250, 0)
+layout_mode = 2
+theme_override_constants/separation = 4
+theme_override_icons/grabber = ExtResource("4_ch2pf")
+
+[node name="Panel" type="Panel" parent="HBoxContainer/TabContainer/HSplitContainer/HSplitContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_wh5hl")
+
+[node name="Panel2" type="Panel" parent="HBoxContainer/TabContainer/HSplitContainer/HSplitContainer"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2rvnj")
