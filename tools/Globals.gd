@@ -3,6 +3,8 @@ extends Node
 
 var shortcut_held: bool = false
 
+@export var high_res_scale_factor = 1.5
+
 @export_group("Color Palette")
 @export var dark_color: Color
 @export var dark_color_resources: Array[Resource]
@@ -35,3 +37,6 @@ func _process(delta):
 			shortcut_held = true
 	else:
 		shortcut_held = false
+
+func _on_window_resize():
+	

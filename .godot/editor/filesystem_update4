@@ -1,16 +1,18 @@
-res://resources/new_theme.tres
-res://resources/label_stylebox.tres
-res://scripts/asdfasdf.gd
-res://scripts/divider.gd
-res://scripts/HBoxResizable.gd
-res://scripts/VBoxResizable.gd
-res://scripts/WindowResizer.gd
-res://control.tscn
 res://scenes/control.tscn
-res://scenes/h_split_container.tscn
-res://resources/menu_bar.tscn
-res://resources/top_bar_style.tres
-res://MenuButton.gd
+res://resources/left bar/LeftBarNormal.tres
 res://resources/left bar/LeftBarHover.tres
 res://resources/left bar/LeftBarPressed.tres
-res://resources/left bar/LeftBarNormal.tres
+res://scenes/h_split_container.tscn
+res://control.tscn
+res://tools/Globals.gd
+res://tools/asdfasfdasdf.tscn
+res://tools/asdf.tscn
+res://resources/boring_background.tres
+res://resources/boring_background_leftpad.tres
+res://resources/top bar/TabBarSelected.tres
+res://resources/top bar/TabBarUnselected.tres
+res://resources/top bar/TabBarHover.tres
+res://resources/boring_background_tabbar.tres
+res://resources/boring_background_options.tres
+res://resources/darker_boring_background.tres
+res://resources/dark_boring_background.tres

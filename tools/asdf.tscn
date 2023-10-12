@@ -1,0 +1,260 @@
+[gd_scene load_steps=16 format=3 uid="uid://qvr71mgjh1dy"]
+
+[ext_resource type="Texture2D" uid="uid://bofii2xj5csuw" path="res://assets/dragger.png" id="1_5uuov"]
+[ext_resource type="StyleBox" uid="uid://detra4m5sie2h" path="res://resources/darker_boring_background.tres" id="1_50hxv"]
+[ext_resource type="Texture2D" uid="uid://datq7lbfps1k" path="res://assets/menu_bar.png" id="1_oank4"]
+[ext_resource type="StyleBox" uid="uid://kegef623ikgs" path="res://resources/top bar/TabBarSelected.tres" id="2_qhh5i"]
+[ext_resource type="Texture2D" uid="uid://yixiy7ss1071" path="res://assets/vertical_dragger.png" id="2_uc634"]
+[ext_resource type="StyleBox" uid="uid://bkilhclt7y6nf" path="res://resources/top bar/TabBarUnselected.tres" id="4_5jfo3"]
+[ext_resource type="StyleBox" uid="uid://sbon8r6jkcy8" path="res://resources/boring_background_tabbar.tres" id="4_483w6"]
+[ext_resource type="StyleBox" uid="uid://c7uj10cp45uyh" path="res://resources/left bar/LeftBarNormal.tres" id="5_p6rf0"]
+[ext_resource type="StyleBox" uid="uid://b7usr1tdos6oj" path="res://resources/left bar/LeftBarHover.tres" id="6_q5ilu"]
+[ext_resource type="StyleBox" uid="uid://cpjy8ej12m43o" path="res://resources/left bar/LeftBarPressed.tres" id="7_p527b"]
+[ext_resource type="StyleBox" uid="uid://d3jm6ggckpld8" path="res://resources/boring_background_options.tres" id="11_21wcx"]
+[ext_resource type="StyleBox" uid="uid://pecslf73sp21" path="res://resources/dark_boring_background.tres" id="12_r6co2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o3qfs"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ml4oi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l3i7j"]
+
+[node name="GridContainer" type="GridContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 2
+
+[node name="MenuContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(60, 60)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("1_50hxv")
+
+[node name="MenuButton" type="MenuButton" parent="MenuContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("1_oank4")
+icon_alignment = 1
+expand_icon = true
+
+[node name="TabBarContainer" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("1_50hxv")
+
+[node name="TabBar" type="TabBar" parent="TabBarContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 60)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+theme_override_styles/tab_selected = ExtResource("2_qhh5i")
+theme_override_styles/tab_hovered = ExtResource("2_qhh5i")
+theme_override_styles/tab_unselected = ExtResource("4_5jfo3")
+clip_tabs = false
+tab_count = 2
+tab_0/title = "Algebra 1"
+tab_1/title = "Precalculus"
+
+[node name="OptionsContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(50, 2.08165e-12)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("4_483w6")
+
+[node name="Options" type="VFlowContainer" parent="OptionsContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Button" type="Button" parent="OptionsContainer/Options"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_styles/normal = ExtResource("5_p6rf0")
+theme_override_styles/hover = ExtResource("6_q5ilu")
+theme_override_styles/pressed = ExtResource("7_p527b")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o3qfs")
+toggle_mode = true
+action_mode = 0
+
+[node name="BodyContainer" type="HSplitContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_icons/grabber = ExtResource("1_5uuov")
+
+[node name="TreeContainer" type="VSplitContainer" parent="BodyContainer"]
+custom_minimum_size = Vector2(250, 2.08165e-12)
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_icons/grabber = ExtResource("2_uc634")
+
+[node name="TopTreeContainer" type="PanelContainer" parent="BodyContainer/TreeContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 200)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("11_21wcx")
+
+[node name="TopTree" type="VBoxContainer" parent="BodyContainer/TreeContainer/TopTreeContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TopTreeTitle" type="HBoxContainer" parent="BodyContainer/TreeContainer/TopTreeContainer/TopTree"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BodyContainer/TreeContainer/TopTreeContainer/TopTree/TopTreeTitle"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Modules
+"
+
+[node name="Button" type="Button" parent="BodyContainer/TreeContainer/TopTreeContainer/TopTree/TopTreeTitle"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 23
+text = "+"
+
+[node name="ItemList" type="ItemList" parent="BodyContainer/TreeContainer/TopTreeContainer/TopTree"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/v_separation = 3
+theme_override_font_sizes/font_size = 23
+theme_override_styles/panel = ExtResource("12_r6co2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ml4oi")
+item_count = 5
+item_0/text = "Teacher Planning and Resources"
+item_1/text = "Unit 1: Content"
+item_2/text = "Unit 2: More Content"
+item_3/text = "Unit 3: Transformations"
+item_4/text = "Unit 4: How to Learn"
+
+[node name="TopTreeContainer2" type="PanelContainer" parent="BodyContainer/TreeContainer"]
+custom_minimum_size = Vector2(2.08165e-12, 200)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("11_21wcx")
+
+[node name="TopTree" type="VBoxContainer" parent="BodyContainer/TreeContainer/TopTreeContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TopTreeTitle" type="HBoxContainer" parent="BodyContainer/TreeContainer/TopTreeContainer2/TopTree"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="BodyContainer/TreeContainer/TopTreeContainer2/TopTree/TopTreeTitle"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
+text = "Grades
+"
+
+[node name="Button" type="Button" parent="BodyContainer/TreeContainer/TopTreeContainer2/TopTree/TopTreeTitle"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 23
+text = "+"
+
+[node name="ItemList" type="ItemList" parent="BodyContainer/TreeContainer/TopTreeContainer2/TopTree"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/v_separation = 3
+theme_override_font_sizes/font_size = 23
+theme_override_styles/panel = ExtResource("12_r6co2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l3i7j")
+item_count = 4
+item_0/text = "Classwork"
+item_1/text = "Homework"
+item_2/text = "Unit Assessments"
+item_3/text = "Final Asessment"
+
+[node name="ClassContainer" type="HSplitContainer" parent="BodyContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+theme_override_icons/grabber = ExtResource("1_5uuov")
+
+[node name="StudentBinderContainer" type="PanelContainer" parent="BodyContainer/ClassContainer"]
+custom_minimum_size = Vector2(500, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = ExtResource("11_21wcx")
+
+[node name="Student Binder" type="VBoxContainer" parent="BodyContainer/ClassContainer/StudentBinderContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header" type="HBoxContainer" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder"]
+custom_minimum_size = Vector2(2.08165e-12, 47)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Student Digital Binder
+"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="Button" type="Button" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/Header"]
+custom_minimum_size = Vector2(2.08165e-12, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 21
+text = "Split View"
+
+[node name="TextEdit" type="TextEdit" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/Header"]
+custom_minimum_size = Vector2(290, 45)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 22
+placeholder_text = "Filter..."
+
+[node name="Tree" type="Tree" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("12_r6co2")
+
+[node name="ResourcesContainer" type="PanelContainer" parent="BodyContainer/ClassContainer"]
+custom_minimum_size = Vector2(500, 2.08165e-12)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("11_21wcx")
+
+[node name="Student Binder" type="VBoxContainer" parent="BodyContainer/ClassContainer/ResourcesContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header" type="HBoxContainer" parent="BodyContainer/ClassContainer/ResourcesContainer/Student Binder"]
+custom_minimum_size = Vector2(2.08165e-12, 50)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Label" type="Label" parent="BodyContainer/ClassContainer/ResourcesContainer/Student Binder/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 24
+text = "Teacher Resources"
+clip_text = true
+text_overrun_behavior = 3
+
+[node name="TextEdit" type="TextEdit" parent="BodyContainer/ClassContainer/ResourcesContainer/Student Binder/Header"]
+custom_minimum_size = Vector2(290, 45)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 22
+placeholder_text = "Filter..."
+
+[node name="Tree" type="Tree" parent="BodyContainer/ClassContainer/ResourcesContainer/Student Binder"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = ExtResource("12_r6co2")

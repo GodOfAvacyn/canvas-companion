@@ -1,12 +1,78 @@
-[gd_scene load_steps=2 format=3 uid="uid://cud5rl30e7cgf"]
+[gd_scene load_steps=7 format=3 uid="uid://b7cjmarncging"]
 
-[ext_resource type="Script" path="res://tools/Globals.gd" id="1_23psw"]
+[ext_resource type="PackedScene" uid="uid://dpjnlhygod5t2" path="res://scenes/Resizable.tscn" id="1_4gaso"]
+[ext_resource type="Script" path="res://scripts/asdfasdf.gd" id="1_ht37m"]
+[ext_resource type="Script" path="res://scripts/HBoxResizable.gd" id="1_ywxy4"]
+[ext_resource type="PackedScene" uid="uid://ce2c8walj0jfl" path="res://scenes/Divider.tscn" id="2_0gx6p"]
+[ext_resource type="Script" path="res://scripts/VBoxResizable.gd" id="3_4msaw"]
+[ext_resource type="Script" path="res://scripts/resizable.gd" id="4_q87pr"]
 
-[node name="Control" type="Control"]
+[node name="Resize Test" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_23psw")
+script = ExtResource("1_ht37m")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 1600.0
+offset_bottom = 900.0
+script = ExtResource("1_ywxy4")
+
+[node name="VBoxResizable" type="VBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+script = ExtResource("3_4msaw")
+
+[node name="Resizable" type="Node" parent="HBoxContainer/VBoxResizable"]
+script = ExtResource("4_q87pr")
+min_x = 200.0
+max_x = 400.0
+
+[node name="Panel" type="Panel" parent="HBoxContainer/VBoxResizable"]
+custom_minimum_size = Vector2(0, 440)
+layout_mode = 2
+
+[node name="Resizable" type="Node" parent="HBoxContainer/VBoxResizable/Panel"]
+script = ExtResource("4_q87pr")
+min_y = 200.0
+max_y = 500.0
+
+[node name="Divider4" parent="HBoxContainer/VBoxResizable" instance=ExtResource("2_0gx6p")]
+layout_mode = 2
+
+[node name="Panel2" type="Panel" parent="HBoxContainer/VBoxResizable"]
+custom_minimum_size = Vector2(0, 440)
+layout_mode = 2
+
+[node name="Resizable" type="Node" parent="HBoxContainer/VBoxResizable/Panel2"]
+script = ExtResource("4_q87pr")
+min_y = 200.0
+max_y = 500.0
+
+[node name="Divider3" parent="HBoxContainer" instance=ExtResource("2_0gx6p")]
+layout_mode = 2
+
+[node name="Panel3" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(295, 0)
+layout_mode = 2
+
+[node name="Resizable" parent="HBoxContainer/Panel3" instance=ExtResource("1_4gaso")]
+min_x = 100.0
+max_x = 600.0
+
+[node name="Divider2" parent="HBoxContainer" instance=ExtResource("2_0gx6p")]
+layout_mode = 2
+
+[node name="Panel4" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(485, 0)
+layout_mode = 2
+
+[node name="Resizable" parent="HBoxContainer/Panel4" instance=ExtResource("1_4gaso")]
+min_x = 100.0
+max_x = 500.0
+
+[connection signal="resized" from="." to="." method="_on_control_resized"]
