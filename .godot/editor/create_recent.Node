@@ -1,10 +1,11 @@
-PanelContainer
-Tree
 Button
-TextEdit
 Label
 HBoxContainer
 VBoxContainer
+ScrollContainer
+PanelContainer
+Tree
+TextEdit
 MenuButton
 MenuBar
 HSeparator

@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://qvr71mgjh1dy"]
+[gd_scene load_steps=18 format=3 uid="uid://qvr71mgjh1dy"]
 
 [ext_resource type="Texture2D" uid="uid://bofii2xj5csuw" path="res://assets/dragger.png" id="1_5uuov"]
 [ext_resource type="StyleBox" uid="uid://detra4m5sie2h" path="res://resources/darker_boring_background.tres" id="1_50hxv"]
@@ -12,6 +12,8 @@
 [ext_resource type="StyleBox" uid="uid://cpjy8ej12m43o" path="res://resources/left bar/LeftBarPressed.tres" id="7_p527b"]
 [ext_resource type="StyleBox" uid="uid://d3jm6ggckpld8" path="res://resources/boring_background_options.tres" id="11_21wcx"]
 [ext_resource type="StyleBox" uid="uid://pecslf73sp21" path="res://resources/dark_boring_background.tres" id="12_r6co2"]
+[ext_resource type="StyleBox" uid="uid://brd7xip8wt2qx" path="res://resources/item/hover.tres" id="13_lxd7o"]
+[ext_resource type="StyleBox" uid="uid://blr80uliyfi87" path="res://resources/item/selected.tres" id="14_8mp4k"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o3qfs"]
 
@@ -123,10 +125,14 @@ text = "+"
 [node name="ItemList" type="ItemList" parent="BodyContainer/TreeContainer/TopTreeContainer/TopTree"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/v_separation = 3
+theme_override_colors/guide_color = Color(0, 0, 0, 0)
+theme_override_constants/v_separation = 5
 theme_override_font_sizes/font_size = 23
 theme_override_styles/panel = ExtResource("12_r6co2")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ml4oi")
+theme_override_styles/hovered = ExtResource("13_lxd7o")
+theme_override_styles/selected = ExtResource("14_8mp4k")
+theme_override_styles/selected_focus = ExtResource("14_8mp4k")
 item_count = 5
 item_0/text = "Teacher Planning and Resources"
 item_1/text = "Unit 1: Content"
@@ -166,7 +172,8 @@ text = "+"
 [node name="ItemList" type="ItemList" parent="BodyContainer/TreeContainer/TopTreeContainer2/TopTree"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/v_separation = 3
+theme_override_colors/guide_color = Color(0, 0, 0, 0)
+theme_override_constants/v_separation = 5
 theme_override_font_sizes/font_size = 23
 theme_override_styles/panel = ExtResource("12_r6co2")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_l3i7j")
@@ -220,10 +227,172 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 22
 placeholder_text = "Filter..."
 
-[node name="Tree" type="Tree" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder"]
+[node name="SessionScroller" type="ScrollContainer" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = ExtResource("12_r6co2")
+
+[node name="Sessions" type="VBoxContainer" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="Session1" type="VBoxContainer" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Header" type="HBoxContainer" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session1"]
+custom_minimum_size = Vector2(2.08165e-12, 45)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="SessionNumber" type="Label" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session1/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 22
+text = "Session 1"
+
+[node name="TeacherName" type="Label" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session1/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "Aiden Meyer"
+
+[node name="Date" type="Label" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session1/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "November 13
+"
+
+[node name="Button" type="Button" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session1/Header"]
+layout_mode = 2
+text = "x"
+
+[node name="Classwork1" type="HBoxContainer" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session1"]
+custom_minimum_size = Vector2(2.08165e-12, 45)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session1/Classwork1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.678431, 0.678431, 0.678431, 1)
+theme_override_font_sizes/font_size = 22
+text = "   Classwork1: Doing lots of math"
+
+[node name="Type" type="Label" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session1/Classwork1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.678431, 0.678431, 0.678431, 1)
+theme_override_font_sizes/font_size = 22
+text = "Assignment"
+
+[node name="DueDate" type="Label" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session1/Classwork1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.678431, 0.678431, 0.678431, 1)
+theme_override_font_sizes/font_size = 22
+text = "Due November 13"
+
+[node name="Button" type="Button" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session1/Classwork1"]
+layout_mode = 2
+text = "x"
+
+[node name="Homework1" type="HBoxContainer" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session1"]
+custom_minimum_size = Vector2(2.08165e-12, 45)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session1/Homework1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.678431, 0.678431, 0.678431, 1)
+theme_override_font_sizes/font_size = 22
+text = "   Homework 1: Doing even more math"
+
+[node name="Type" type="Label" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session1/Homework1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.678431, 0.678431, 0.678431, 1)
+theme_override_font_sizes/font_size = 22
+text = "Assignment
+"
+
+[node name="DueDate" type="Label" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session1/Homework1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.678431, 0.678431, 0.678431, 1)
+theme_override_font_sizes/font_size = 22
+text = "No Due Date"
+
+[node name="Button" type="Button" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session1/Homework1"]
+layout_mode = 2
+text = "x"
+
+[node name="Session2" type="VBoxContainer" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Header" type="HBoxContainer" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session2"]
+custom_minimum_size = Vector2(2.08165e-12, 45)
+layout_mode = 2
+
+[node name="SessionNumber" type="Label" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session2/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_font_sizes/font_size = 22
+text = "Session 1"
+
+[node name="TeacherName" type="Label" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session2/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "Aiden Meyer"
+
+[node name="Date" type="Label" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session2/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 22
+text = "November 13
+"
+
+[node name="Button" type="Button" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session2/Header"]
+layout_mode = 2
+text = "x"
+
+[node name="Homework1" type="HBoxContainer" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session2"]
+custom_minimum_size = Vector2(2.08165e-12, 45)
+layout_mode = 2
+
+[node name="Name" type="Label" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session2/Homework1"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_color = Color(0.678431, 0.678431, 0.678431, 1)
+theme_override_font_sizes/font_size = 22
+text = "   Homework 1: Doing even more math"
+
+[node name="Type" type="Label" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session2/Homework1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.678431, 0.678431, 0.678431, 1)
+theme_override_font_sizes/font_size = 22
+text = "Assignment"
+
+[node name="DueDate" type="Label" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session2/Homework1"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.678431, 0.678431, 0.678431, 1)
+theme_override_font_sizes/font_size = 22
+text = "Overdue"
+
+[node name="Button" type="Button" parent="BodyContainer/ClassContainer/StudentBinderContainer/Student Binder/SessionScroller/Sessions/Session2/Homework1"]
+layout_mode = 2
+text = "x"
 
 [node name="ResourcesContainer" type="PanelContainer" parent="BodyContainer/ClassContainer"]
 custom_minimum_size = Vector2(500, 2.08165e-12)

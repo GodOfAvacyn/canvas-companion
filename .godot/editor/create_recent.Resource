@@ -1,1 +1,2 @@
+StyleBoxEmpty
 StyleBoxFlat

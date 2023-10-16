@@ -1,18 +1,19 @@
-res://scenes/control.tscn
+res://tools/asdf.tscn
+res://resources/top bar/TabBarSelected.tres
+res://resources/top bar/TabBarUnselected.tres
+res://resources/boring_background_tabbar.tres
 res://resources/left bar/LeftBarNormal.tres
 res://resources/left bar/LeftBarHover.tres
 res://resources/left bar/LeftBarPressed.tres
+res://resources/boring_background_options.tres
+res://resources/dark_boring_background.tres
+res://resources/selection/select_left.tres
+res://resources/selection/select_middle.tres
+res://resources/selection/select_right.tres
+res://tools/treefoolery.gd
+res://scenes/control.tscn
 res://scenes/h_split_container.tscn
 res://control.tscn
-res://tools/Globals.gd
-res://tools/asdfasfdasdf.tscn
-res://tools/asdf.tscn
-res://resources/boring_background.tres
-res://resources/boring_background_leftpad.tres
-res://resources/top bar/TabBarSelected.tres
-res://resources/top bar/TabBarUnselected.tres
-res://resources/top bar/TabBarHover.tres
-res://resources/boring_background_tabbar.tres
-res://resources/boring_background_options.tres
-res://resources/darker_boring_background.tres
-res://resources/dark_boring_background.tres
+res://resources/item/hover.tres
+res://resources/item/nothing.tres
+res://resources/item/selected.tres
